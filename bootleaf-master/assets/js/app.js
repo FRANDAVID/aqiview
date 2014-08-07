@@ -383,24 +383,18 @@ if (document.body.clientWidth <= 767) {
 
 var baseLayers = {
 
-  "<img src='assets/img/theater.png' width='24' height='28'>城市AQI": mapquestOSM,
-  "检测站AQI": mapquestOAM
+  "<img src='assets/img/theater.png' width='24' height='28'>城市AQI222": mapquestOSM,
+  "检测站AQI22": mapquestOAM
 };
 
 var groupedOverlays = {
   "Points of Interest": {
     "<img src='assets/img/theater.png' width='24' height='28'>&nbsp;Theaters": theaterLayer,
     "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer
-  },
-  "Reference": {
-    "Boroughs": boroughs,
-    "Subway Lines": subwayLines
   }
 };
 
-var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
-  collapsed: isCollapsed
-}).addTo(map);
+var layerControl = L.control.layers(baseLayers, groupedOverlays).addTo(map);
 
 /* Highlight search box text on click */
 $("#searchbox").click(function () {
